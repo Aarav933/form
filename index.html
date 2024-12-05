@@ -1,0 +1,53 @@
+<html>
+    <body>
+        <form onsubmit="validate(event)">
+            email <input type="email" name="email"><br>
+password<input type="password"><br>
+age <input type="number" min=18 max=50> <br> 
+<button>Submit</button>
+
+        </form>
+        <script src="script.js">
+        function validate(e) {
+
+e.preventDefault();
+
+const email = document.getElementById('email').value;
+
+const pass = document.getElementById('password').value;
+
+const age = document.getElementById('age').value;
+
+
+let message = '';
+
+if (email === '') {
+
+message = 'Please enter an email.';
+
+
+} else if (pass === '') {
+
+message = 'Password must be at least 8 characters.';
+
+
+} else if (age === '') {
+
+message = 'Age must be between 12 and 50.';
+
+
+}
+
+else {
+
+message = 'Login successful!';
+
+
+}
+
+document.getElementById("l1").innerHTML = message;
+
+}
+        </script>
+    </body>
+</html>
